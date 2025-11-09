@@ -1,7 +1,6 @@
 const userRepository = require("../repositories/userRepository");
 
 function authenticate(username, password) {
-  // Simula autenticação
   if (username === "admin" && password === "123456") {
     return {
       success: true,
@@ -16,7 +15,6 @@ function authenticate(username, password) {
 function getDashboardData(userId) {
   const user = userRepository.findById(userId);
 
-  // Formata nome do usuário para exibição
   const displayName = formatUserName(user);
 
   return {
@@ -29,7 +27,6 @@ function getDashboardData(userId) {
 }
 
 function formatUserName(user) {
-  // Tenta formatar o nome em maiúsculas
   return user.name.toUpperCase();
 }
 

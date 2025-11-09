@@ -1,4 +1,6 @@
 const express = require("express");
+const { logAndSendError } = require("../utils/errorLogger");
+const path = require("path");
 const app = express();
 
 app.use(express.json());
@@ -21,7 +23,7 @@ function processUserData(userId) {
     id: profile.id,
     displayName: profile.name,
     contact: profile.email,
-    lastUpdate: userData.timestamp, // variável não definida
+    lastUpdate: userData.timestamp,
   };
 
   return formattedData;
@@ -34,14 +36,7 @@ app.get("/api/profile/:userId", (req, res) => {
   } catch (error) {
     console.error("Error processing request:", error);
 
-    // Envia notificação de erro para webhook
-    fetch("http://localhost:4000/webhook", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        errorPayload: error.stack,
-      }),
-    }).catch((err) => console.error("Failed to send webhook:", err));
+    logAndSendError(error, __dirname);
 
     res.status(500).json({ error: "Internal server error" });
   }

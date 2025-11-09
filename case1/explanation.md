@@ -25,12 +25,18 @@ curl http://localhost:3001/api/dashboard -H "user-id: 999"
 ## Detalhes do erro
 
 - **Tipo**: TypeError
-- **Mensagem**: Cannot read property 'toUpperCase' of undefined
 - **Localização**: `services/authService.js`, linha 26 (função `formatUserName`)
 - **Causa raiz**: O objeto `user` é null quando o userId não existe, e a função tenta acessar `user.name`
-- **Dificuldade**: Fácil–Médio
-- **Stack trace**:
-  - Linha 26: `formatUserName` tenta acessar `user.name`
-  - Linha 18: `getDashboardData` chama `formatUserName`
-  - controllers/authController.js linha 20: `getDashboard` chama o serviço
-  - Múltiplas camadas de chamadas
+
+## Como solucionar
+
+Adicione validação antes de acessar propriedades do objeto:
+
+```javascript
+function formatUserName(user) {
+  if (!user) {
+    return "Unknown User";
+  }
+  return user.name.toUpperCase();
+}
+```

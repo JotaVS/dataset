@@ -1,0 +1,22 @@
+{
+  "name": "order-processing-api",
+  "version": "1.0.0",
+  "description": "Order processing API with async operations",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "orders",
+    "api",
+    "async"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}

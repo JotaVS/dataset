@@ -1,4 +1,6 @@
 const authService = require("../services/authService");
+const { logAndSendError } = require("../../utils/errorLogger");
+const path = require("path");
 
 function login(req, res) {
   const { username, password } = req.body;
@@ -24,14 +26,7 @@ function getDashboard(req, res) {
   } catch (error) {
     console.error("Dashboard error:", error);
 
-    // Envia notificação de erro para webhook
-    fetch("http://localhost:4000/webhook", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        errorPayload: error.stack,
-      }),
-    }).catch((err) => console.error("Failed to send webhook:", err));
+    logAndSendError(error, path.join(__dirname, ".."));
 
     res.status(500).json({ error: "Failed to load dashboard" });
   }
