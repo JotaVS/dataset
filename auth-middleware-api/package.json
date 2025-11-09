@@ -1,0 +1,22 @@
+{
+  "name": "auth-middleware-api",
+  "version": "1.0.0",
+  "description": "Authentication middleware API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "auth",
+    "api",
+    "middleware"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}
