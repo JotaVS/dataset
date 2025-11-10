@@ -4,10 +4,8 @@ const authController = require("./controllers/authController");
 const app = express();
 app.use(express.json());
 
-// Rota de autenticação
 app.post("/api/auth/login", authController.login);
 
-// Rota protegida
 app.get("/api/dashboard", authController.getDashboard);
 
 const PORT = 3001;

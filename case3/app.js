@@ -39,7 +39,7 @@ app.get("/api/orders/:orderId", async (req, res) => {
   }
 });
 
-const PORT = 3002;
+const PORT = 3003;
 app.listen(PORT, () => {
   console.log(`Order Processing API running on port ${PORT}`);
   console.log(`Try POST: http://localhost:${PORT}/api/orders`);

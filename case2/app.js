@@ -6,7 +6,6 @@ const app = express();
 app.use(express.json());
 
 function getUserProfile(userId) {
-  // Simula busca de perfil do usuário
   const profiles = {
     1: { id: "1", name: "João Silva", email: "joao@email.com" },
     2: { id: "2", name: "Maria Santos", email: "maria@email.com" },
@@ -18,7 +17,6 @@ function getUserProfile(userId) {
 function processUserData(userId) {
   const profile = getUserProfile(userId);
 
-  // Processa dados do usuário
   const formattedData = {
     id: profile.id,
     displayName: profile.name,
@@ -42,7 +40,7 @@ app.get("/api/profile/:userId", (req, res) => {
   }
 });
 
-const PORT = 3000;
+const PORT = 3002;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Try: http://localhost:${PORT}/api/profile/1`);

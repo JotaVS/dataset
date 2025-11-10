@@ -1,0 +1,22 @@
+{
+  "name": "payment-webhook-api",
+  "version": "1.0.0",
+  "description": "Payment webhook processing API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "payment",
+    "webhook",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}

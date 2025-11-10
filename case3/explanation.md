@@ -13,7 +13,7 @@ npm start
 Envie um pedido com valor total maior que 100:
 
 ```bash
-curl -X POST http://localhost:3002/api/orders -H "Content-Type: application/json" -d "{\"userId\":\"user123\",\"items\":[{\"id\":\"item1\",\"qty\":15}]}"
+curl -X POST http://localhost:3003/api/orders -H "Content-Type: application/json" -d "{\"userId\":\"user123\",\"items\":[{\"id\":\"item1\",\"qty\":15}]}"
 ```
 
 ## Detalhes do erro

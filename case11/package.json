@@ -1,0 +1,22 @@
+{
+  "name": "category-tree-api",
+  "version": "1.0.0",
+  "description": "Category hierarchy tree API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "category",
+    "tree",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}

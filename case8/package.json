@@ -1,0 +1,22 @@
+{
+  "name": "batch-processor-api",
+  "version": "1.0.0",
+  "description": "Batch data processing API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "batch",
+    "processor",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}

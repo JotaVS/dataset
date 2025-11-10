@@ -10,7 +10,7 @@ npm start
 
 ## Teste
 
-Acesse: `http://localhost:3000/api/profile/1`
+Acesse: `http://localhost:3002/api/profile/1`
 
 ## Detalhes do erro
 
@@ -30,7 +30,7 @@ function processUserData(userId) {
     id: profile.id,
     displayName: profile.name,
     contact: profile.email,
-    lastUpdate: new Date().toISOString(), // Corrigido
+    lastUpdate: new Date().toISOString(),
   };
 
   return formattedData;

@@ -1,0 +1,22 @@
+{
+  "name": "user-export-api",
+  "version": "1.0.0",
+  "description": "User data export API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "export",
+    "api",
+    "users"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}

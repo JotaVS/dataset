@@ -1,0 +1,22 @@
+{
+  "name": "scheduling-api",
+  "version": "1.0.0",
+  "description": "Event scheduling and calendar API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "scheduling",
+    "calendar",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "volta": {
+    "node": "18.20.0"
+  }
+}
