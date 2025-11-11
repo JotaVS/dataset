@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-11-10T02:37:41.690Z",
+  "status": "success",
+  "response": {
+    "success": true,
+    "errorDescription": "Ocorreu um `RangeError: Invalid array length` na criação de um novo Array.",
+    "possibleCause": "Na função `generateUserReport` do arquivo `analyticsService.js`, na linha 35, um novo Array está sendo criado com base no valor de `performanceScore`. Este `performanceScore` é calculado como `1000 / conversionRate`. Se `conversionRate` for 0 (o que pode acontecer se `userData.purchases` for 0 e `userData.sessions.length` for maior que 0), `performanceScore` se tornará `Infinity`. Tentar criar um `new Array(Infinity)` resulta em um `RangeError` pois o tamanho do array deve ser um número finito e não negativo.",
+    "suggestedSolution": "Adicionar uma verificação para o valor de `conversionRate` antes de usá-lo para criar o array. Se `conversionRate` for 0, o `performanceScore` deve ser tratado de forma apropriada, possivelmente definindo-o como 0 ou outro valor padrão, em vez de `Infinity`. Também é importante garantir que `statsCalculator.calculateConversionRate` lide corretamente com a divisão por zero.",
+    "codeLanguage": "JavaScript",
+    "affectedFiles": [
+      "services/analyticsService.js"
+    ]
+  }
+}

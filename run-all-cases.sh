@@ -139,7 +139,9 @@ run_case() {
             ;;
     esac
     
-    sleep 2
+    # Aguarda tempo suficiente para processar e salvar os logs
+    echo -e "${YELLOW}Aguardando processamento e salvamento dos logs...${NC}"
+    sleep 20
     
     echo -e "${GREEN}✓ Teste executado${NC}"
     
